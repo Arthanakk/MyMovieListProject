@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block body %}
+<style>
+ h1{
+            text-align:center;
+
+            }
+        .row{
+            display:flex;
+            justify-content:center;
+            }
+
+</style>
+<h1>Add New movie</h1>
+<div class="row">
+<form  method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+    <table >
+        <tr>
+            <td> <label>Movie name</label></td>
+            <td> <input type="text" name="name" placeholder="Enter MovieName"><br></td>
+        </tr>
+         <tr>
+            <td> <label>Language</label></td>
+            <td> <input type="text" name="language" placeholder="Enter Language"><br></td>
+        </tr>
+         <tr>
+            <td> <label>Genre</label></td>
+            <td> <input type="text" name="genre" placeholder="Enter Genre"><br></td>
+        </tr>
+
+
+        <tr>
+            <td><label>Year</label></td>
+            <td><input type="text" name="year" placeholder="Enter year"><br></td>
+        </tr>
+
+        <tr>
+            <td><label>ImageFile</label></td>
+            <td><input type="file" name="img" placeholder=""><br> </td>
+        </tr>
+        <tr>
+            <td><label>Description</label></td>
+            <td><input type="text" name="desc" placeholder=""><br></td>
+        </tr>
+         <tr>
+            <td><label>Cast1</label></td>
+            <td><input type="text" name="cast1" placeholder=""><br></td>
+        </tr>
+         <tr>
+            <td><label>Cast2</label></td>
+            <td><input type="text" name="cast2" placeholder=""><br></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;"> <button style="background-color:darkblue;color:white;">ADD</button></td>
+        </tr>
+
+ </table>
+</form>
+</div>
+{% endblock %}

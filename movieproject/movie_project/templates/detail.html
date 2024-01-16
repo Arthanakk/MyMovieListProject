@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container-fluid pt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{movie.img.url}}" alt="{{movie.name}}" style="height:450px;width:450px" >
+        </div>
+        <div class="col-md-8">
+            <h2> {{movie.name}}</h2>
+            <h6>Language: {{movie.language}}</h6>
+            <pre style="color:white"> year: {{movie.year}}    Genre: {{movie.genre}}</pre>
+
+            <h6> {{movie.desc}}</h6>
+            <h5>Cast</h5>
+            <ul>
+                <li>{{movie.cast1}}</li>
+                <li> {{movie.cast2}}</li>
+            </ul>
+            <a href="{% url 'movieapp:update' movie.id %}" class="btn btn-warning">update</a>
+            <a href="{% url 'movieapp:delete' movie.id %}" class="btn btn-danger">Remove</a>
+            <a href="{% url 'movieapp:index' %}" class="btn btn-primary">Home</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
